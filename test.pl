@@ -5,10 +5,9 @@ use warnings;
 use WWW::Mechanize;
 use File::Slurp;
 
-my $mech = WWW::Mechanize->new (
-    timeout => 30,
-    agent_alias => 'Linux Mozilla',
-);
+my $string = 'bet betting sersbetsdfkldsjf simple sorhsebsdure';
 
-$mech->get ('http://google.com');
-print $mech->content (format => 'text');
+while ($string =~ /((\w+|\s)?bet(\w+|\s)?)/ig)
+{
+    print $1."\n";
+}
